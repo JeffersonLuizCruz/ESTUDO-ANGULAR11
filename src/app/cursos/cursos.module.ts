@@ -3,15 +3,28 @@ import { CommonModule } from '@angular/common';
 
 import { CursosRoutingModule } from './cursos-routing.module';
 import { CursosListaComponent } from './cursos-lista/cursos-lista.component';
+import { HeaderComponent } from './components/tamplates/header/header.component';
+import { NavComponent } from './components/tamplates/nav/nav.component';
+import { FooterComponent } from './components/tamplates/footer/footer.component';
+import { HomeComponent } from './view/home/home.component';
 
 
 @NgModule({
   declarations: [
-    CursosListaComponent
+    CursosListaComponent,
+    HeaderComponent,
+    NavComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     CursosRoutingModule
+  ],
+  exports: [
+    HeaderComponent,
+    NavComponent,
+    FooterComponent
   ]
 })
 export class CursosModule { }
