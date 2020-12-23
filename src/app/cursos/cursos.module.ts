@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CursosService } from './cursos.service';
 import { CursosRoutingModule } from './cursos-routing.module';
 import { CursosListaComponent } from './cursos-lista/cursos-lista.component';
 import { HeaderComponent } from './components/tamplates/header/header.component';
@@ -15,7 +16,8 @@ import { HomeComponent } from './view/home/home.component';
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    CursosListaComponent,
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,9 @@ import { HomeComponent } from './view/home/home.component';
   exports: [
     HeaderComponent,
     NavComponent,
-    FooterComponent
-  ]
+    FooterComponent,
+    CursosListaComponent
+  ],
+  providers:[CursosService]
 })
 export class CursosModule { }
