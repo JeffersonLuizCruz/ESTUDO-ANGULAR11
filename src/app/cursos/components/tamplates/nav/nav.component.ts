@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  email: string = "jefferson.luiz.cruz@gmail.com";
+
+  cursos: string[] = ['Java', 'TypeScript', 'Angular'];
+
   constructor() { }
 
   ngOnInit(): void {
