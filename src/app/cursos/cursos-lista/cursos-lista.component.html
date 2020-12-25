@@ -1,7 +1,44 @@
-<p>Este é meu email para contado {{emailAdress}}</p>
+<h3>##Interpolação estatica##</h3>
 
-<ul *ngFor= "let curso of cursosTitle">
+<p>Este é meu email para contado {{emailAdress}}</p>
+<br/>
+<h3>##Uso da diretiva *ngFor##</h3>
+<!--OBS: Tanto faz você usar o [innerHTML] como interpolar {{curso}}-->
+<ul *ngFor= "let curso of cursosTitle"[innerHTML]= "curso">
     <li>
-        {{curso}}
+        <!--{{curso}}-->
     </li>
 </ul>
+<br/>
+<h3>##Uso da diretiva [(ngModel)]=" "e (click)##</h3>
+
+<input type="text" [(ngModel)]= "task">
+<button type="button" (click)= "add()">Enviar</button>
+<ul *ngFor= "let item of tasks">
+    <li >
+        {{item}}
+    </li>
+</ul>
+<br/><br/>
+<h3>##Uso da diretiva [hidden]##</h3><!--Hidden tem a função de esconder um valor se for verdadeiro-->
+<div [hidden]= "isAdmin">
+    common User
+</div>
+<div [hidden]= "!isAdmin">
+    common Admin
+</div>
+<br>
+<h3>##Uso da diretiva *ngIf##</h3> <!--*ngIf segue o mesmo principio da linguagem Java-->
+<div *ngIf= "isAdminNgIf">
+    Administrator
+</div>
+<div *ngIf= "!isAdminNgIf">
+    Administrator Basic
+</div>
+<br>
+<h3>##Uso da diretiva [ngSwitch]##</h3><!--ngSwitch segue o mesmo princípio da lingagem Java-->
+<div [ngSwitch]= "profile">
+    <p *ngSwitchCase= "1">Seu número da sorte foi 1</p>
+    <p *ngSwitchCase= "2">Seu número da sorte foi 2</p>
+    <p *ngSwitchDefault>Você não acertou seu número da sorte</p>
+</div>
