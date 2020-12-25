@@ -12,7 +12,10 @@ export class CursosService {
   baseURL= "https://jsonplaceholder.typicode.com/comments";
 
   constructor(private http: HttpClient) { }
-
+  /*Método que faz uma requisição para o BackEnd. Quando esse método
+  conseguir observar o evendo chegando, ele vai encaminhar a requisição para o 
+  componente cursos-lista.components.ts
+  */
   getComment(): Observable<Comment[]>{
     return this.http.get<Comment[]>(this.baseURL);
   }

@@ -56,3 +56,19 @@
         {{comment.id}} - {{comment.name}} - {{comment.email}}
     </li>
 </ul>
+<br>
+<h3>## 08 - Conceito ngModel##</h3>
+<form #form= "ngForm">
+<div>
+    <label for="name">Nome</label>
+    <input type="name" id="name" name="name"[(ngModel)]= "name" #nameVerify= "ngModel" required>
+    <span *ngIf= "nameVerify.invalid">Campo Obrigatório</span>
+</div>
+<br>
+<div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" [(ngModel)]= "email" #emailVerify= "ngModel" email required>
+    <span *ngIf= "emailVerify.invalid">Email inválido</span>
+</div>
+<button type="submit" [disabled]= "!form.valid">Enviar</button>
+</form>

@@ -39,10 +39,13 @@ export class CursosListaComponent implements OnInit {
 
   ngOnInit(): void {
     this.cursoService.getComment()
-    .subscribe(comments => {
+    .subscribe(comments => {      //Método subscribe você será notificado quando a resposta chegar.
       this.comments = comments;
     })
-
   }
+
+  //<h3>## 08 - Conceito ngModel##</h3>
+  name: string = "";
+  email: string = "";
 
 }
