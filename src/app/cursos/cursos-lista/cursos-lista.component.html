@@ -1,8 +1,11 @@
-<h3>##Interpolação estatica##</h3>
+<h3>## 01 - Interpolação estatica##</h3>
+<p>OBS: Esse exemplo se encontra no compomente cursos-lista.component.html</p>
 
 <p>Este é meu email para contado {{emailAdress}}</p>
 <br/>
-<h3>##Uso da diretiva *ngFor##</h3>
+<h3>## 02 - Uso da diretiva *ngFor##</h3>
+<p>OBS: Esse exemplo se encontra no compomente cursos-lista.component.html</p>
+<p> NOTA: Existe uma ligação com o componente cursos.service.ts ; cursos.component.ts ; cursos.coponent.html</p>
 <!--OBS: Tanto faz você usar o [innerHTML] como interpolar {{curso}}-->
 <ul *ngFor= "let curso of cursosTitle"[innerHTML]= "curso">
     <li>
@@ -10,7 +13,8 @@
     </li>
 </ul>
 <br/>
-<h3>##Uso da diretiva [(ngModel)]=" "e (click)##</h3>
+<h3>## 03 - Uso da diretiva [(ngModel)]=" "e (click)##</h3>
+<p>OBS: Esse exemplo se encontra no compomente cursos-lista.component.html</p>
 
 <input type="text" [(ngModel)]= "task">
 <button type="button" (click)= "add()">Enviar</button>
@@ -20,7 +24,8 @@
     </li>
 </ul>
 <br/><br/>
-<h3>##Uso da diretiva [hidden]##</h3><!--Hidden tem a função de esconder um valor se for verdadeiro-->
+<h3>## 04 - Uso da diretiva [hidden]##</h3><!--Hidden tem a função de esconder um valor se for verdadeiro-->
+<p>OBS: Esse exemplo se encontra no compomente cursos-lista.component.html</p>
 <div [hidden]= "isAdmin">
     common User
 </div>
@@ -28,7 +33,8 @@
     common Admin
 </div>
 <br>
-<h3>##Uso da diretiva *ngIf##</h3> <!--*ngIf segue o mesmo principio da linguagem Java-->
+<h3>## 05 - Uso da diretiva *ngIf##</h3> <!--*ngIf segue o mesmo principio da linguagem Java-->
+<p>OBS: Esse exemplo se encontra no compomente cursos-lista.component.html</p>
 <div *ngIf= "isAdminNgIf">
     Administrator
 </div>
@@ -36,9 +42,17 @@
     Administrator Basic
 </div>
 <br>
-<h3>##Uso da diretiva [ngSwitch]##</h3><!--ngSwitch segue o mesmo princípio da lingagem Java-->
+<h3>## 06 - Uso da diretiva [ngSwitch]##</h3><!--ngSwitch segue o mesmo princípio da lingagem Java-->
+<p>OBS: Esse exemplo se encontra no compomente cursos-lista.component.html</p>
 <div [ngSwitch]= "profile">
     <p *ngSwitchCase= "1">Seu número da sorte foi 1</p>
     <p *ngSwitchCase= "2">Seu número da sorte foi 2</p>
     <p *ngSwitchDefault>Você não acertou seu número da sorte</p>
 </div>
+<br>
+<h3>## 07 - Conceito de Service##</h3>
+<ul *ngFor= "let comment of comments">
+    <li>
+        {{comment.id}} - {{comment.name}} - {{comment.email}}
+    </li>
+</ul>

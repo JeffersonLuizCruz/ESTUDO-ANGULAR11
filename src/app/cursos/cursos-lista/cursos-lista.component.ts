@@ -1,3 +1,4 @@
+import { Comment } from './../comment.model';
 import { CursosService } from './../cursos.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,11 +14,11 @@ export class CursosListaComponent implements OnInit {
   //<h3>##Interpolação estatica##</h3>
   emailAdress: string = "analista.jefferson.luiz";
 
-  //<h3>##Uso da diretiva *ngFor##</h3>
+  //<h3>##Uso da diretiva *ngFor com diretiva CursoService##</h3>
   cursosTitle = this.cursoService.getCurso();
 
   //<h3>##Uso da diretiva [(ngModel)]=" "e (click)##</h3>
-  public tasks: string[] = [];
+  tasks: string[] = [];
   task = "";
 
   add():void{
@@ -33,7 +34,15 @@ export class CursosListaComponent implements OnInit {
   //<h3>##Uso da diretiva [ngSwitch]</h3>
   profile: number = 3;
 
+  //Fazendo integração com curso.service.ts
+  comments: Comment[] = [];
+
   ngOnInit(): void {
+    this.cursoService.getComment()
+    .subscribe(comments => {
+      this.comments = comments;
+    })
+
   }
 
 }

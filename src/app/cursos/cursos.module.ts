@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CursosService } from './cursos.service';
 import { CursosRoutingModule } from './cursos-routing.module';
@@ -9,6 +10,8 @@ import { HeaderComponent } from './components/tamplates/header/header.component'
 import { NavComponent } from './components/tamplates/nav/nav.component';
 import { FooterComponent } from './components/tamplates/footer/footer.component';
 import { HomeComponent } from './view/home/home.component';
+
+
 
 
 
@@ -24,13 +27,14 @@ import { HomeComponent } from './view/home/home.component';
   imports: [
     CommonModule,
     CursosRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    CursosListaComponent
+    CursosListaComponent,
   ],
   providers:[CursosService]
 })

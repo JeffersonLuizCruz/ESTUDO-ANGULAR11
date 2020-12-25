@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CursosService } from './cursos/cursos.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CursosModule } from './cursos/cursos.module';
+
+
 
 
 @NgModule({
@@ -16,8 +19,8 @@ import { CursosModule } from './cursos/cursos.module';
     BrowserModule,
     AppRoutingModule,
     CursosModule,
-    FormsModule
-    
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [CursosService],
   bootstrap: [AppComponent]
